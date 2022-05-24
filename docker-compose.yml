@@ -1,0 +1,22 @@
+version: '3.9'
+
+volumes:
+  node_modules:
+
+services:
+  gatsby:
+    build:
+      context: .
+      dockerfile: ./.docker/gatsby/Dockerfile
+    container_name: arsaga-hackathon-website-gatsby
+    working_dir: /arsaga-hackathon-website
+    ports:
+      - 8000:8000
+      - 9000:9000
+    volumes:
+      - .:/arsaga-hackathon-website
+      - node_modules:/arsaga-hackathon-website/node_modules
+    stdin_open: true
+    tty: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
