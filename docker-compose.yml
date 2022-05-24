@@ -14,7 +14,7 @@ services:
       - 8000:8000
       - 9000:9000
     volumes:
-      - .:/arsaga-hackathon-website
+      - .:/arsaga-hackathon-website:cached
       - node_modules:/arsaga-hackathon-website/node_modules
     stdin_open: true
     tty: true
