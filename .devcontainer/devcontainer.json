@@ -82,7 +82,9 @@
   "extensions": [
     "aaron-bond.better-comments",
     "christian-kohler.path-intellisense",
+    "donjayamanne.githistory",
     "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
     "yzhang.markdown-all-in-one",
