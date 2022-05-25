@@ -16,6 +16,9 @@ services:
     volumes:
       - .:/arsaga-hackathon-website:cached
       - node_modules:/arsaga-hackathon-website/node_modules
+      - ~/.ssh:/root/.ssh
+      - ~/.gitconfig:/root/.gitconfig
+      - ~/.config/git:/root/.config/git
     stdin_open: true
     tty: true
     environment:
