@@ -6,3 +6,4 @@ RUN apt-get update \
     vim \
     && npm install -g gatsby-cli
 WORKDIR /arsaga-hackathon-website
+ENV LANG=C.UTF-8 TZ=Asia/Tokyo
