@@ -1,4 +1,12 @@
 {
+  "editor.bracketPairColorization.enabled": true,
+  "editor.tabSize": 2,
+  "emmet.variables": {
+    "lang": "ja"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
   "cSpell.words": [
     "arsaga",
     "devcontainer",

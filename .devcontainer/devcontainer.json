@@ -18,16 +18,8 @@
 
   // Set *default* container specific settings.json values on container create.
   "settings": {
-    "editor.bracketPairColorization.enabled": true,
-    "editor.tabSize": 2,
-    "emmet.variables": {
-      "lang": "ja"
-    },
-    "extensions.autoUpdate": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.formatOnType": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "extensions.autoUpdate": true,
     "better-comments.tags": [
       {
         "tag": "TODO",
