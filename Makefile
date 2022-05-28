@@ -2,6 +2,12 @@
 docker-build:
 	docker-compose build --no-cache --force-rm
 
+.PHONY: init
+init:
+	@make docker-build
+	@make up
+	@make npm-install
+
 .PHONY: up
 up:
 	docker-compose up -d
@@ -21,43 +27,43 @@ restart:
 
 .PHONY: ps
 ps:
-	docker ps
+	docker-compose ps
 
 .PHONY: npm-install
 npm-install:
 	docker-compose exec gatsby npm install
 
-.PHONY: lint-fix
-lint-fix:
-	docker-compose exec gatsby npm run lint-fix
-
 .PHONY: gatsby
 gatsby:
 	docker-compose exec gatsby bash
 
-.PHONY: start
-start:
-	@make clean
-	docker-compose exec gatsby gatsby develop --host 0.0.0.0
-
 .PHONY: develop
 develop:
 	@make clean
-	docker-compose exec gatsby gatsby develop --host 0.0.0.0
+	docker-compose exec gatsby npm run develop
+
+.PHONY: start
+start:
+	@make clean
+	docker-compose exec gatsby npm run develop
 
 .PHONY: build
 build:
 	@make clean
-	docker-compose exec gatsby gatsby build
+	docker-compose exec gatsby npm run build
 
 .PHONY: serve
 serve:
-	docker-compose exec gatsby gatsby serve --host 0.0.0.0
+	docker-compose exec gatsby npm run serve
 
 .PHONY: clean
 clean:
-	docker-compose exec gatsby gatsby clean
+	docker-compose exec gatsby npm run clean
 
 .PHONY: typecheck
 typecheck:
-	docker-compose exec gatsby gatsby tsc --noEmit
+	docker-compose exec gatsby npm run typecheck
+
+.PHONY: lint-fix
+lint-fix:
+	docker-compose exec gatsby npm run lint-fix

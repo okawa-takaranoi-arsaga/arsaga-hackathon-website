@@ -7,3 +7,4 @@ RUN apt-get update \
     && npm install -g gatsby-cli
 WORKDIR /arsaga-hackathon-website
 ENV LANG=C.UTF-8 TZ=Asia/Tokyo
+CMD ["/bin/bash"]

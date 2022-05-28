@@ -8,13 +8,13 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
+    "develop": "gatsby develop --host 0.0.0.0",
+    "start": "gatsby develop --host 0.0.0.0",
     "build": "gatsby build",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve --host 0.0.0.0",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "lint-fix": "eslint --cache --fix './src/**/*.{js,jsx,ts,tsx}' && stylelint --cache --fix './src/**/*.{css,scss} --ignore-path .gitignore' && prettier -w *",
+    "lint-fix": "eslint --cache --fix './src/**/*.{js,jsx,ts,tsx}' && stylelint --cache --fix './src/**/*.{css,scss}' --ignore-path .gitignore && prettier -w *",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
   },
