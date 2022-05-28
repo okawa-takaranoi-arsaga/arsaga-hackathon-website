@@ -18,8 +18,26 @@
 
   // Set *default* container specific settings.json values on container create.
   "settings": {
+    "editor.bracketPairColorization.enabled": true,
+    "editor.tabSize": 2,
+    "emmet.variables": {
+      "lang": "ja"
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": true
+    },
     "extensions.autoUpdate": true,
+
+    // NOTE: stylelintでのエラーと重複を避けるため、VSCodeデフォルトのLintはOFFにする
+    "stylelint.validate": ["css", "scss"],
+    "css.validate": false,
+    "scss.validate": false,
+
+    // Better Comments でアノテーションコメントにカラーを付与する
     "better-comments.tags": [
       {
         "tag": "TODO",
@@ -87,6 +105,7 @@
     "eamodio.gitlens",
     "esbenp.prettier-vscode",
     "streetsidesoftware.code-spell-checker",
+    "stylelint.vscode-stylelint",
     "yzhang.markdown-all-in-one",
     "VisualStudioExptTeam.vscodeintellicode"
   ]

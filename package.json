@@ -14,13 +14,14 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "lint-fix": "eslint --fix './src/**/*.{js,jsx,ts,tsx}' && prettier --write './src/**/*.{css,scss,js,jsx,ts,tsx,md}'",
+    "lint-fix": "eslint --cache --fix './src/**/*.{js,jsx,ts,tsx}' && stylelint --cache --fix './src/**/*.{css,scss} --ignore-path .gitignore' && prettier -w *",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
     "src/**/*.{js,ts,jsx,tsx}": "eslint --fix",
-    "src/**/*.{css,scss,js,jsx,ts,tsx,md}": "prettier -w"
+    "src/**/*.{css,scss}": "stylelint --allow-empty-input --fix",
+    "*.{css,scss,js,jsx,ts,tsx,md}": "prettier -w"
   },
   "dependencies": {
     "gatsby": "^4.14.1",
@@ -41,6 +42,12 @@
     "husky": "^8.0.0",
     "lint-staged": "^12.4.1",
     "prettier": "^2.6.2",
+    "stylelint": "^14.8.5",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-recommended-scss": "^6.0.0",
+    "stylelint-rscss": "^0.4.0",
+    "stylelint-scss": "^4.2.0",
     "typescript": "^4.6.4"
   }
 }

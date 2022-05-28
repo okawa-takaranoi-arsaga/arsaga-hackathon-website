@@ -14,7 +14,7 @@ services:
       - 8000:8000
       - 9000:9000
     volumes:
-      - .:/arsaga-hackathon-website:cached
+      - .:/arsaga-hackathon-website
       - node_modules:/arsaga-hackathon-website/node_modules
       - ~/.ssh:/root/.ssh
       - ~/.gitconfig:/root/.gitconfig

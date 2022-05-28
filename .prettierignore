@@ -1,3 +1,4 @@
+.cache/
 .eslintrc.js
 gatsby-config.ts
 package-lock.json
