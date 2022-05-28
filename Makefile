@@ -29,6 +29,10 @@ restart:
 ps:
 	docker-compose ps
 
+.PHONY: remove-volume
+remove-volume:
+	docker volume rm arsaga-hackathon-website_node_modules
+
 .PHONY: npm-install
 npm-install:
 	docker-compose exec gatsby npm install
@@ -67,3 +71,7 @@ typecheck:
 .PHONY: lint-fix
 lint-fix:
 	docker-compose exec gatsby npm run lint-fix
+
+.PHONY: open
+open:
+	devcontainer open
