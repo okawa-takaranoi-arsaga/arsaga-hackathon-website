@@ -16,7 +16,8 @@
     "typecheck": "tsc --noEmit",
     "lint-fix": "eslint --cache --fix './src/**/*.{js,jsx,ts,tsx}' && stylelint --cache --fix './src/**/*.{css,scss}' --ignore-path .gitignore && prettier -w *",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint --edit $1"
   },
   "lint-staged": {
     "src/**/*.{js,ts,jsx,tsx}": "eslint --fix",
@@ -31,6 +32,8 @@
     "sass": "^1.51.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.1",
+    "@commitlint/config-conventional": "^17.0.0",
     "@types/node": "^17.0.31",
     "@types/react": "17.0.14",
     "@types/react-dom": "17.0.14",

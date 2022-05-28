@@ -1,9 +1,20 @@
 {
   "version": "0.2",
-  "ignorePaths": [".devcontainer"],
+  "ignorePaths": [
+    ".devcontainer"
+  ],
   "dictionaryDefinitions": [],
   "dictionaries": [],
-  "words": ["arsaga", "axios", "devcontainer", "hackathon", "rscss", "stylelint", "typecheck"],
+  "words": [
+    "arsaga",
+    "axios",
+    "commitlint",
+    "devcontainer",
+    "hackathon",
+    "rscss",
+    "stylelint",
+    "typecheck"
+  ],
   "ignoreWords": [],
   "import": []
 }
