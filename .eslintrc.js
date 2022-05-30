@@ -19,4 +19,9 @@ module.exports = {
   ],
   root: true,
   rules: {},
+  settings: {
+    "react": {
+      "version": "detect"
+    }
+  },
 }
