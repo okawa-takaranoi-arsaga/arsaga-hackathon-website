@@ -3,5 +3,6 @@
 gatsby-config.ts
 package-lock.json
 package.json
+cspell.json
 tsconfig.json
 Makefile
