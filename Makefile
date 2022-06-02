@@ -25,13 +25,13 @@ restart:
 	@make down
 	@make up
 
+.PHONY: destroy
+destroy:
+	docker-compose down --rmi all --volumes
+
 .PHONY: ps
 ps:
 	docker-compose ps
-
-.PHONY: remove-volume
-remove-volume:
-	docker volume rm arsaga-hackathon-website_node_modules
 
 .PHONY: npm-install
 npm-install:
@@ -43,17 +43,14 @@ gatsby:
 
 .PHONY: develop
 develop:
-	@make clean
 	docker-compose exec gatsby npm run develop
 
 .PHONY: start
 start:
-	@make clean
-	docker-compose exec gatsby npm run develop
+	docker-compose exec gatsby npm run start
 
 .PHONY: build
 build:
-	@make clean
 	docker-compose exec gatsby npm run build
 
 .PHONY: serve
