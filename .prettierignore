@@ -1,7 +1,9 @@
 .cache/
 .eslintrc.js
+.github/pull_request_template.md
 gatsby-config.ts
 package-lock.json
 package.json
+cspell.json
 tsconfig.json
 Makefile

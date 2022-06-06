@@ -1,0 +1,53 @@
+version: 2.1
+
+#  実行環境を定義
+executors:
+  node:
+    docker:
+      - image: circleci/node:15.2.1
+
+jobs:
+  build:
+    executor:
+      name: node
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - gatsby-npm-{{ checksum "package-lock.json" }}
+            - gatsby-npm-
+      - run:
+          name: 'npm install'
+          command: npm install --cache ~/.cache/npm
+      - save_cache:
+          key: gatsby-npm-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.cache/npm
+      - run:
+          name: 'Build'
+          command: npm run build
+
+  # Netlifyへのデプロイ
+  deploy:
+    executor:
+      name: node
+    steps:
+      - checkout
+      - run:
+          name: 'lsコマンド打つだけのテスト'
+          command: ls
+
+workflows:
+  version: 2
+  build_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

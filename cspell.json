@@ -1,13 +1,16 @@
 {
   "version": "0.2",
   "ignorePaths": [
-    ".devcontainer"
+    ".devcontainer",
+    ".github/workflows",
+    "README.md"
   ],
   "dictionaryDefinitions": [],
   "dictionaries": [],
   "words": [
     "arsaga",
     "axios",
+    "circleci",
     "commitlint",
     "devcontainer",
     "hackathon",
