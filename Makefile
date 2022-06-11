@@ -8,6 +8,12 @@ init:
 	@make up
 	@make npm-install
 
+.PHONY: setup
+setup:
+	@make up
+	@make open
+	@make develop
+
 .PHONY: up
 up:
 	docker-compose up -d
