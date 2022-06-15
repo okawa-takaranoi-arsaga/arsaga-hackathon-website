@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@react-three/fiber": "^7.0.29",
+    "@types/three": "^0.141.0",
     "gatsby": "^4.14.1",
     "gatsby-plugin-sass": "^5.14.0",
     "gsap": "^3.10.4",
