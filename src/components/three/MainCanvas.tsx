@@ -7,7 +7,7 @@ function MainCanvas() {
       <Canvas>
         <mesh position={[0, 1.5, 0]}>
           <boxGeometry />
-          <meshStandardMaterial color={'orange'} />
+          <meshStandardMaterial color='orange' />
         </mesh>
         <ambientLight />
       </Canvas>
