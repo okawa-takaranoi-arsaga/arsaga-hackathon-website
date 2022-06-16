@@ -23,8 +23,24 @@ jobs:
           key: gatsby-npm-{{ checksum "package-lock.json" }}
           paths:
             - ~/.cache/npm
+      - unless:
+          condition:
+            equal: ['master', <<pipeline.git.branch>>]
+          steps:
+            - run:
+                name: 'delete SEO files'
+                command: rm -f ./static/robots.txt ./static/sitemap.xml
+            - run:
+                name: 'create robots.txt'
+                command: "echo 'User-agent: *\nDisallow: /' > ./static/robots.txt"
+
+      # TODO 後で消すこと - ファイルの確認テスト
+      - run: pwd
+      - run: ls
+      - run: cat ./static/robots.txt
+
       - run:
-          name: 'Build'
+          name: 'build'
           command: npm run build
       - persist_to_workspace:
           root: .
@@ -37,20 +53,26 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+
+      # TODO 後で消すこと - ファイルの確認テスト
+      - run: pwd
+      - run: ls
+      - run: ls ./public/
+
       - when:
           condition:
             equal: ['master', <<pipeline.git.branch>>]
           steps:
             - run:
-                name: 'pwdコマンド打つだけのテスト'
-                command: pwd
+                name: 'deploy production'
+                command: npm run netlify deploy -p -d ./public -a ${NETLIFY_PERSONAL_ACCESS_TOKEN} -s ${NETLIFY_SITE_ID}
       - when:
           condition:
             equal: ['develop', <<pipeline.git.branch>>]
           steps:
             - run:
-                name: 'lsコマンド打つだけのテスト'
-                command: ls
+                name: 'deploy develop'
+                command: npm run netlify deploy -d ./public -a ${NETLIFY_PERSONAL_ACCESS_TOKEN} -s ${NETLIFY_SITE_ID_DEV}
 
 workflows:
   version: 2
