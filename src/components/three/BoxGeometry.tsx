@@ -1,10 +1,13 @@
 import React from 'react'
+import { Vector3Tuple } from 'three'
 
-const BoxGeometry = () => {
-  // const { hovered, setHovered } = props
+type Props = {
+  position: Vector3Tuple
+}
 
+const BoxGeometry = (props: Props) => {
   return (
-    <mesh>
+    <mesh {...props}>
       <boxGeometry />
       <meshStandardMaterial color='orange' />
     </mesh>
