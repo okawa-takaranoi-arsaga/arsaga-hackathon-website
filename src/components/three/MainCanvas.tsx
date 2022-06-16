@@ -1,7 +1,7 @@
 import React from 'react'
 import { Canvas } from '@react-three/fiber'
 
-function MainCanvas() {
+const MainCanvas = () => {
   return (
     <>
       <Canvas>
