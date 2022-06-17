@@ -37,7 +37,7 @@ jobs:
           name: 'build'
           command: npm run build
       - persist_to_workspace:
-          root: ./public
+          root: .
           paths:
             - .
 
@@ -46,10 +46,12 @@ jobs:
       name: node
     steps:
       - attach_workspace:
-          at: ./public
-      - run:
-          name: 'install netlify-cli'
-          command: npm install --unsafe-perm -g netlify-cli
+          at: .
+
+      # TODO 後で消すこと - ファイルの確認テスト
+      - run: pwd
+      - run: ls
+
       - when:
           condition:
             equal: ['master', <<pipeline.git.branch>>]
