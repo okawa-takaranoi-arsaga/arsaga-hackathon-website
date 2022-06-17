@@ -33,17 +33,11 @@ jobs:
             - run:
                 name: 'create robots.txt'
                 command: "echo 'User-agent: *\nDisallow: /' > ./static/robots.txt"
-
-      # TODO 後で消すこと - ファイルの確認テスト
-      - run: pwd
-      - run: ls
-      - run: cat ./static/robots.txt
-
       - run:
           name: 'build'
           command: npm run build
       - persist_to_workspace:
-          root: .
+          root: ./public
           paths:
             - .
 
@@ -52,12 +46,15 @@ jobs:
       name: node
     steps:
       - attach_workspace:
-          at: .
+          at: ./public
 
       # TODO 後で消すこと - ファイルの確認テスト
       - run: pwd
       - run: ls
-      - run: ls ./public/
+
+      - run:
+          name: 'install netlify-cli'
+          command: npm install -g netlify-cli
 
       - when:
           condition:
