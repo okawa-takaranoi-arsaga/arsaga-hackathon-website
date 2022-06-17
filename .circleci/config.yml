@@ -49,7 +49,7 @@ jobs:
           at: ./public
       - run:
           name: 'install netlify-cli'
-          command: yarn add netlify-cli
+          command: yarn global add netlify-cli
       - when:
           condition:
             equal: ['master', <<pipeline.git.branch>>]
