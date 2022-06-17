@@ -47,15 +47,9 @@ jobs:
     steps:
       - attach_workspace:
           at: ./public
-
-      # TODO 後で消すこと - ファイルの確認テスト
-      - run: pwd
-      - run: ls
-
       - run:
           name: 'install netlify-cli'
-          command: npm install -g netlify-cli
-
+          command: npm install --unsafe-perm=true -g netlify-cli
       - when:
           condition:
             equal: ['master', <<pipeline.git.branch>>]
