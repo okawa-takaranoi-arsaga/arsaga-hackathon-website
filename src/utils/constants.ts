@@ -1,9 +1,4 @@
-import { Vector3Tuple } from 'three'
-
-type BoxPositionsType = {
-  id: number
-  position: Vector3Tuple
-}
+import { BoxPositionsType } from '../types/types'
 
 export const BOX_POSITIONS: BoxPositionsType[] = [
   {

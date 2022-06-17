@@ -1,7 +1,7 @@
 import React from 'react'
 import { Canvas } from '@react-three/fiber'
 import BoxGeometry from './BoxGeometry'
-import { BOX_POSITIONS } from '../../modules/BoxPositions'
+import { BOX_POSITIONS } from '../../utils/constants'
 import MainCamera from './MainCamera'
 
 const MainCanvas = () => {
