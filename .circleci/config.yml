@@ -23,6 +23,15 @@ jobs:
           key: gatsby-npm-{{ checksum "package-lock.json" }}
           paths:
             - ./node_modules
+      - when:
+          condition:
+            equal: ['master', <<pipeline.git.branch>>]
+          steps:
+            - run:
+                name: 'build'
+                command: npm run build
+                environment:
+                  APP_URL: https://arsaga-hackathon-website.netlify.app
       - unless:
           condition:
             equal: ['master', <<pipeline.git.branch>>]
@@ -33,9 +42,11 @@ jobs:
             - run:
                 name: 'create robots.txt'
                 command: "echo 'User-agent: *\nDisallow: /' > ./static/robots.txt"
-      - run:
-          name: 'build'
-          command: npm run build
+            - run:
+                name: 'build'
+                command: npm run build
+                environment:
+                  APP_URL: https://dev-arsaga-hackathon-website.netlify.app
       - persist_to_workspace:
           root: .
           paths:
