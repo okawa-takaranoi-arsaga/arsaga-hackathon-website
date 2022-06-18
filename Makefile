@@ -8,6 +8,12 @@ init:
 	@make up
 	@make npm-install
 
+.PHONY: setup
+setup:
+	@make up
+	@make open
+	@make develop
+
 .PHONY: up
 up:
 	docker-compose up -d
@@ -43,18 +49,22 @@ gatsby:
 
 .PHONY: develop
 develop:
+	@make clean
 	docker-compose exec gatsby npm run develop
 
 .PHONY: start
 start:
+	@make clean
 	docker-compose exec gatsby npm run start
 
 .PHONY: build
 build:
+	@make clean
 	docker-compose exec gatsby npm run build
 
 .PHONY: serve
 serve:
+	@make clean
 	docker-compose exec gatsby npm run serve
 
 .PHONY: clean
