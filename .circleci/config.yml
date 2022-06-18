@@ -31,7 +31,7 @@ jobs:
                 name: 'build'
                 command: npm run build
                 environment:
-                  APP_URL: ${PRODUCTION_URL}
+                  APP_URL: https://arsaga-hackathon-website.netlify.app
       - unless:
           condition:
             equal: ['master', <<pipeline.git.branch>>]
@@ -46,7 +46,7 @@ jobs:
                 name: 'build'
                 command: npm run build
                 environment:
-                  APP_URL: ${DEVELOP_URL}
+                  APP_URL: https://dev-arsaga-hackathon-website.netlify.app
       - persist_to_workspace:
           root: .
           paths:
