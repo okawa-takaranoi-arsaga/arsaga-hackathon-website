@@ -10,7 +10,8 @@ const MainCanvas = () => {
   const [position, setPosition] = useState<OfficialPositionPropType>()
 
   const sendBoxId = (id: number) => {
-    setPosition(OFFICIAL_POSITIONS.find((position) => position.id === id))
+    const officialPosition = OFFICIAL_POSITIONS.find((position) => position.id === id)
+    setPosition(officialPosition)
   }
 
   return (
