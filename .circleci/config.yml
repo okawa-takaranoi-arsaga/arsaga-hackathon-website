@@ -47,9 +47,6 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run:
-          name: 'install terminal-link'
-          command: npm install -g terminal-link
       - when:
           condition:
             equal: ['master', <<pipeline.git.branch>>]
