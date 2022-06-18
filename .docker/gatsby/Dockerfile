@@ -1,4 +1,4 @@
-FROM node:15.2.1-slim
+FROM node:16.15.1-slim
 
 RUN apt-get update \
     && apt-get autoremove -y \
