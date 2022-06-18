@@ -1,15 +1,23 @@
-import React from 'react'
-import { Vector3Tuple } from 'three'
+import React, { useState } from 'react'
+import { BoxPositionsPropType } from '../../types/types'
 
-type Props = {
-  position: Vector3Tuple
-}
+const BoxGeometry = (props: BoxPositionsPropType) => {
+  const { id, position, sendBoxId } = props
+  const [hovered, setHovered] = useState(false)
 
-const BoxGeometry = (props: Props) => {
+  const onPointerOver = () => {
+    sendBoxId(id)
+    setHovered(true)
+  }
+
+  const onPointerLeave = () => {
+    setHovered(false)
+  }
+
   return (
-    <mesh {...props}>
+    <mesh position={position} onPointerOver={onPointerOver} onPointerLeave={onPointerLeave}>
       <boxGeometry />
-      <meshStandardMaterial color='orange' />
+      <meshStandardMaterial color={hovered ? 'pink' : 'orange'} />
     </mesh>
   )
 }

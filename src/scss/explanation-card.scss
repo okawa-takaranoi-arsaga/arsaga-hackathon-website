@@ -1,0 +1,16 @@
+.explanation-card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: black;
+
+  > .position {
+    font-size: 40px;
+  }
+  > .explanation {
+    font-size: 20px;
+  }
+  > .people {
+    font-size: 100px;
+  }
+}
