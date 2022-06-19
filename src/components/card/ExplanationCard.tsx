@@ -7,9 +7,15 @@ const ExplanationCard = (prop: OfficialPositionPropType) => {
 
   return (
     <div className='explanation-card'>
-      <p className='position'>{position}</p>
-      <p className='explanation'>{explanation}</p>
-      <p className='people'>{people}</p>
+      <div className='top'>
+        <p className='position'>{position}</p>
+        <p className='explanation'>{explanation}</p>
+      </div>
+
+      <p className='people'>
+        {people}
+        <span className='accent'>名</span>
+      </p>
     </div>
   )
 }
