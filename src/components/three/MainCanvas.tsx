@@ -23,7 +23,7 @@ const MainCanvas = () => {
       )}
       <Canvas>
         {BOX_POSITIONS.map((box) => (
-          <BoxGeometry position={box.position} key={box.id} id={box.id} sendBoxId={sendBoxId} />
+          <BoxGeometry position={box.position} key={box.id} id={box.id} sendBoxId={sendBoxId} scale={box.scale} />
         ))}
         <MainCamera />
         <ambientLight intensity={0.5} />
