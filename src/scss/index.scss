@@ -8,6 +8,17 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.icon-contents {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  padding: 20px;
+  background-color: rgb(47, 47, 47);
+  border-radius: 27px;
+}
+
 #canvas-container {
   position: fixed;
   top: 0;

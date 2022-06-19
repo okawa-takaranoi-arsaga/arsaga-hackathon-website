@@ -11,7 +11,6 @@ const ExplanationCard = (prop: OfficialPositionPropType) => {
         <p className='position'>{position}</p>
         <p className='explanation'>{explanation}</p>
       </div>
-
       <p className='people'>
         {people}
         <span className='accent'>名</span>

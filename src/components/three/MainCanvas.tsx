@@ -5,6 +5,7 @@ import { BOX_POSITIONS, OFFICIAL_POSITIONS } from '../../utils/constants'
 import MainCamera from './MainCamera'
 import ExplanationCard from '../card/ExplanationCard'
 import { OfficialPositionPropType } from '../../types/types'
+import Member from '../../images/member.png'
 
 const MainCanvas = () => {
   const [position, setPosition] = useState<OfficialPositionPropType>()
@@ -16,6 +17,8 @@ const MainCanvas = () => {
 
   return (
     <>
+      <img className='icon-contents' src={Member} />
+
       {position ? (
         <ExplanationCard position={position.position} explanation={position.explanation} people={position.people} />
       ) : (
