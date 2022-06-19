@@ -28,7 +28,7 @@ const MainCanvas = () => {
         <MainCamera />
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} />
-        <pointLight position={[10, 10, 0]} />
+        <pointLight position={[10, 15, 0]} />
       </Canvas>
     </>
   )
