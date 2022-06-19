@@ -5,6 +5,7 @@ import { BOX_POSITIONS, OFFICIAL_POSITIONS } from '../../utils/constants'
 import MainCamera from './MainCamera'
 import ExplanationCard from '../card/ExplanationCard'
 import { OfficialPositionPropType } from '../../types/types'
+import Member from '../../images/member.png'
 
 const MainCanvas = () => {
   const [position, setPosition] = useState<OfficialPositionPropType>()
@@ -16,6 +17,8 @@ const MainCanvas = () => {
 
   return (
     <>
+      <img className='icon-contents' src={Member} />
+
       {position ? (
         <ExplanationCard position={position.position} explanation={position.explanation} people={position.people} />
       ) : (
@@ -28,7 +31,7 @@ const MainCanvas = () => {
         <MainCamera />
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} />
-        <pointLight position={[10, 10, 0]} />
+        <pointLight position={[10, 15, 0]} />
       </Canvas>
     </>
   )

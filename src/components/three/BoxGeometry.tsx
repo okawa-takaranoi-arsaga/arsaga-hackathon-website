@@ -9,7 +9,7 @@ const BoxGeometry = (props: BoxPositionsPropType) => {
 
   const mesh = useRef<Mesh>()
   // Box拡大サイズの調整
-  const scaleLimit = scale / 5
+  const scaleLimit = scale / 2
 
   const onPointerOver = () => {
     sendBoxId(id)
@@ -23,20 +23,22 @@ const BoxGeometry = (props: BoxPositionsPropType) => {
   useEffect(() => {
     if (!mesh.current) return
     // 初期BOXサイズを0に設定
+    mesh.current.scale.x = 2
     mesh.current.scale.y = 0
+    mesh.current.scale.z = 1.2
   }, [])
 
   // Boxアニメーション
   useFrame(() => {
-    if (!mesh.current || mesh.current.scale.y > scaleLimit) return
-    mesh.current.scale.y += 0.05
-    mesh.current.position.y += 0.025
+    if (!mesh.current || mesh.current.scale.y >= scaleLimit) return
+    mesh.current.scale.y += 0.1
+    mesh.current.position.y += 0.05
   })
 
   return (
     <mesh ref={mesh} position={position} onPointerOver={onPointerOver} onPointerLeave={onPointerLeave}>
       <boxGeometry />
-      <meshStandardMaterial color={hovered ? 'pink' : 'orange'} />
+      <meshStandardMaterial color={hovered ? '#DE68AB' : 'orange'} />
     </mesh>
   )
 }
